@@ -45,6 +45,9 @@ public class Hammer implements Hitable {
 		if(health < 0) {
 			health = 0 ;
 		}
+		if(health > maxhp) {
+			health = maxhp ;
+		}
 		this.health = health;
 	}
 
