@@ -1,8 +1,8 @@
 
-public class hammer {
+public class Hammer {
 	private int damage;
 	
-	public hammer(int d) {
+	public Hammer(int d) {
 		this.damage =d ;
 	}
 
