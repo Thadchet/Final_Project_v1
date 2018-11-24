@@ -55,8 +55,10 @@ public class Hammer implements Hitable {
 	public void hit(Object o) {
 		if(o instanceof Rock) {
 			sumscore.addSocre(((Rock) o).getScore());
-		} 
-		///...............
+		}
+		if(o instanceof Worm) {
+			sumscore.addSocre(((Worm) o).getScore());
+		}
 		this.reload = true ;
 	}
 	
