@@ -1,11 +1,10 @@
 
 public class Rock {
-	private int score ;
-	
+	private int score;
+
 	public Rock() {
-		this.score = 30 ;
+		this.score = 30;
 	}
-	
 
 	public int getScore() {
 		return score;
@@ -14,6 +13,5 @@ public class Rock {
 	public void setScore(int score) {
 		this.score = score;
 	}
-
 
 }

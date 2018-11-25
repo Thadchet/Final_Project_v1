@@ -1,11 +1,11 @@
 
-public class HealWorm extends Worm{
+public class HealWorm extends Worm {
 
 	public HealWorm() {
-		super(20,1,1); //score,health,damage
+		super(20, 1, 1); // score,health,damage
 	}
-	
+
 	public void heal(Hammer hammer) {
-		hammer.setHealth(hammer.getHealth()+3);
+		hammer.setHealth(hammer.getHealth() + 3);
 	}
 }

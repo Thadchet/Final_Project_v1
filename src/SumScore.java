@@ -1,13 +1,13 @@
 
 public class SumScore {
-	private int sumscore ;
-	
+	private int sumscore;
+
 	public SumScore() {
-		this.sumscore = 0 ;
+		this.sumscore = 0;
 	}
-	
+
 	public void addSocre(int score) {
-		this.sumscore += score ;
+		this.sumscore += score;
 	}
 
 	public int getSumscore() {
@@ -17,5 +17,5 @@ public class SumScore {
 	public void setSumscore(int sumscore) {
 		this.sumscore = sumscore;
 	}
-	
+
 }
