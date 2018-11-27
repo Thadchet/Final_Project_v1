@@ -1,4 +1,6 @@
+package Pane;
 
+import Timer.Timer;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -39,7 +41,9 @@ public class StackAllPane extends StackPane {
 					alert.setContentText("Please Insert Name");
 					alert.showAndWait();}
 					else {
+				gamepane.getTimer().getAnimationTimer().start();
 				changePane(1);}
+				
 			}
 		});
 

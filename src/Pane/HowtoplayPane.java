@@ -1,3 +1,4 @@
+package Pane;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -33,13 +34,13 @@ public class HowtoplayPane extends VBox {
 		 
 		 String image_path = ClassLoader.getSystemResource("image/").toString();
 		 ImageView imageRock = new ImageView(new Image(image_path+"rock.jpg"));
-		 imageRock.setPreserveRatio(true);
+//		 imageRock.setPreserveRatio(true);
 		 imageRock.setFitHeight(100);
 		 imageRock.setFitWidth(100);
 		 getChildren().add(imageRock);
 		 
 		 ImageView imageHammer = new ImageView(new Image(image_path+"hammer.jpg"));
-		 imageHammer.setPreserveRatio(true);
+//		 imageHammer.setPreserveRatio(true);
 		 imageHammer.setFitHeight(100);
 		 imageHammer.setFitWidth(100);
 		 getChildren().add(imageHammer);
