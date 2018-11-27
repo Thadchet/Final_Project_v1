@@ -1,7 +1,5 @@
 package Pane;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -9,12 +7,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class HowtoplayPane extends VBox {
 	private Button back ;
+	private String image_path ;
 	
 	public HowtoplayPane() {
 		 setVisible(false);
@@ -26,13 +24,11 @@ public class HowtoplayPane extends VBox {
 		 //topic.setStrokeWidth(2);
 		 topic.setUnderline(true);
 		 
-		 
-		 
 		 back = new Button("Back");
 		 setAlignment(Pos.TOP_CENTER);
 		 getChildren().add(topic);
 		 
-		 String image_path = ClassLoader.getSystemResource("image/").toString();
+		 image_path = ClassLoader.getSystemResource("image/").toString();
 		 ImageView imageRock = new ImageView(new Image(image_path+"rock.jpg"));
 //		 imageRock.setPreserveRatio(true);
 		 imageRock.setFitHeight(100);
@@ -47,6 +43,10 @@ public class HowtoplayPane extends VBox {
 		 getChildren().add(back);
 		 
 		 setStyle("-fx-background-color:LIGHTSALMON;");
+	}
+
+	public String getImage_path() {
+		return image_path;
 	}
 
 	public Button getBack() {

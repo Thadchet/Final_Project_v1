@@ -2,17 +2,12 @@ package Logic;
 
 import Pane.ControlPane;
 import javafx.application.Application;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 	private ControlPane stackallpane;
-	private StackPane stackpane;
 
 	@Override
 	public void start(Stage primaryStage) {

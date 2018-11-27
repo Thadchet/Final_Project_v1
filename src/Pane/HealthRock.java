@@ -3,7 +3,6 @@ package Pane;
 import javafx.geometry.Pos;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 
 public class HealthRock extends VBox {
 	private HealthProgressBar healthBar ;

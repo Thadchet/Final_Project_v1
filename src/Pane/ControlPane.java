@@ -1,9 +1,7 @@
 package Pane;
 
-import com.sun.deploy.ref.AppModel.Type;
 
 import Logic.Hammer;
-import Timer.Timer;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -35,6 +33,7 @@ public class ControlPane extends StackPane {
 				hammer.setHealth(hammer.getHealth() - 1);
 				gamepane.getHealthRockBar().setHealth(hammer.getHealth()*0.1);
 				update();
+				System.out.println(gamepane.getImageWorm().getTranslateX());
 			}
 		});
 
@@ -112,7 +111,7 @@ public class ControlPane extends StackPane {
 			popUpGameOver.setTitle("Game Over");
 			popUpGameOver.setHeaderText("Game Over");
 			popUpGameOver.setContentText("Name : \n" + "Your Score : ");
-			
+			gamepane.getTimer().getAnimationTimer().stop();
 			popUpGameOver.showAndWait();
 		}
 	}
