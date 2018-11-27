@@ -1,3 +1,4 @@
+package Logic;
 
 public class Worm {
 	private int score; // default score = 10

@@ -1,3 +1,4 @@
+package Logic;
 
 public class SumScore {
 	private int sumscore;

@@ -1,3 +1,4 @@
+package Logic;
 
 public class Rock {
 	private int score;

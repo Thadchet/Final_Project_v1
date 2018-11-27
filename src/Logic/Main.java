@@ -1,5 +1,6 @@
+package Logic;
 
-import Pane.StackAllPane;
+import Pane.ControlPane;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,14 +11,14 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	private StackAllPane stackallpane;
+	private ControlPane stackallpane;
 	private StackPane stackpane;
 
 	@Override
 	public void start(Stage primaryStage) {
 		StackPane root = new StackPane();
 		Scene scene = new Scene(root, 700, 500);
-		stackallpane = new StackAllPane();
+		stackallpane = new ControlPane();
 		root.getChildren().add(stackallpane);
 
 		primaryStage.setTitle("Hit Rock");

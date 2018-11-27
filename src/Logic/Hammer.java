@@ -1,4 +1,4 @@
-
+package Logic;
 public class Hammer implements Hitable {
 	private int damage;
 	private SumScore sumscore;

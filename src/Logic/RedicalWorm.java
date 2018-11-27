@@ -1,4 +1,4 @@
-
+package Logic;
 public class RedicalWorm extends Worm {
 
 	public RedicalWorm() {

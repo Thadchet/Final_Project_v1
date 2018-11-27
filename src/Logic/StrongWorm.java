@@ -1,4 +1,4 @@
-
+package Logic;
 public class StrongWorm extends Worm {
 
 	public StrongWorm() {

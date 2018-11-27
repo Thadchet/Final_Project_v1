@@ -15,7 +15,11 @@ public class HealthRock extends VBox {
 		
 	}
 	
-	private class HealthProgressBar extends ProgressBar{
+	public HealthProgressBar getHealthBar() {
+		return healthBar;
+	}
+
+	class HealthProgressBar extends ProgressBar{
 		public HealthProgressBar() {
 			super(1);
 			setPrefWidth(300);
@@ -23,6 +27,10 @@ public class HealthRock extends VBox {
 			setStyle("-fx-accent: LIMEGREEN");
 		}
 		
+	}
+	
+	public void setHealth(double i) {
+		healthBar.setProgress(i);
 	}
 
 }

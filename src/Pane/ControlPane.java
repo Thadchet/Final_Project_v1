@@ -1,6 +1,10 @@
 package Pane;
 
+import com.sun.deploy.ref.AppModel.Type;
+
+import Logic.Hammer;
 import Timer.Timer;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,17 +13,30 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.StackPane;
 
-public class StackAllPane extends StackPane {
+public class ControlPane extends StackPane {
 	private RegisterPane registerpane;
 	private HowtoplayPane howtoplaypane;
 	private GamePane gamepane;
+	private Hammer hammer ;
 
-	public StackAllPane() {
+	public ControlPane() {
 		registerpane = new RegisterPane();
 		howtoplaypane = new HowtoplayPane();
 		gamepane = new GamePane();
+		hammer = new Hammer();
 
 		getChildren().addAll(gamepane, howtoplaypane, registerpane);
+		
+		gamepane.getTest().setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				hammer.setHealth(hammer.getHealth() - 1);
+				gamepane.getHealthRockBar().setHealth(hammer.getHealth()*0.1);
+				update();
+			}
+		});
 
 		registerpane.getHow().setOnAction(new EventHandler<ActionEvent>() {
 
@@ -87,6 +104,16 @@ public class StackAllPane extends StackPane {
 				}
 
 			}
+		}
+	}
+	public void update() {
+		if(gamepane.getHealthRockBar().getHealthBar().getProgress() == 0.0) {
+			Alert popUpGameOver =  new Alert(AlertType.INFORMATION);
+			popUpGameOver.setTitle("Game Over");
+			popUpGameOver.setHeaderText("Game Over");
+			popUpGameOver.setContentText("Name : \n" + "Your Score : ");
+			
+			popUpGameOver.showAndWait();
 		}
 	}
 }
