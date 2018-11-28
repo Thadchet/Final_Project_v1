@@ -12,7 +12,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		StackPane root = new StackPane();
-		Scene scene = new Scene(root, 700, 500);
+		Scene scene = new Scene(root, 900, 700);
 		stackallpane = new ControlPane();
 		root.getChildren().add(stackallpane);
 

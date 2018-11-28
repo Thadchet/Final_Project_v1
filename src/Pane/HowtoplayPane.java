@@ -29,13 +29,13 @@ public class HowtoplayPane extends VBox {
 		 getChildren().add(topic);
 		 
 		 image_path = ClassLoader.getSystemResource("image/").toString();
-		 ImageView imageRock = new ImageView(new Image(image_path+"rock.jpg"));
+		 ImageView imageRock = new ImageView(new Image(image_path+"rock.png"));
 //		 imageRock.setPreserveRatio(true);
 		 imageRock.setFitHeight(100);
 		 imageRock.setFitWidth(100);
 		 getChildren().add(imageRock);
 		 
-		 ImageView imageHammer = new ImageView(new Image(image_path+"hammer.jpg"));
+		 ImageView imageHammer = new ImageView(new Image(image_path+"hammer.png"));
 //		 imageHammer.setPreserveRatio(true);
 		 imageHammer.setFitHeight(100);
 		 imageHammer.setFitWidth(100);

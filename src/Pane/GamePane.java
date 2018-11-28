@@ -1,13 +1,8 @@
 package Pane;
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import Timer.Timer;
 import javafx.animation.Animation;
 import javafx.animation.PathTransition;
-import javafx.animation.TranslateTransition;
 import javafx.event.EventHandler;
-import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -23,9 +18,11 @@ import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
+import javafx.scene.transform.Rotate;
+import javafx.scene.transform.Translate;
 import javafx.util.Duration;
 
-public class GamePane extends BorderPane implements Initializable{
+public class GamePane extends BorderPane{
 
 	private Button backMenu;
 	private Button hit ;
@@ -36,49 +33,58 @@ public class GamePane extends BorderPane implements Initializable{
 	private Path path ;
 	private Button test ;
 	private ImageView imageWorm ;
+	
 
 	public GamePane() {
 		setVisible(false);
 		setStyle("-fx-background-color:	DODGERBLUE;");
 		setPadding(new Insets(10));
+		
+		////////// image loader /////////////
+		String image_path = ClassLoader.getSystemResource("image/").toString();
+		////////////////////////////////////
+		
 		hit = new Button("Hit");
 		hit.setPrefHeight(20);
 		hit.setPrefWidth(100);
 		backMenu = new Button("Back to Menu");
 		timer = new Timer();
 		healthRockBar = new HealthRock();
+		
 		setTop(timer);
-		setBottom(backMenu);
+		setBottom(healthRockBar);
 		
 		test = new Button("Test takeDamage");
 		test.setPrefWidth(70);
 		
-		VBox vbox = new VBox();
-		vbox.setSpacing(10);
-		vbox.setAlignment(Pos.CENTER);
-		vbox.getChildren().addAll(hit,healthRockBar,test);
+		VBox vbox1 = new VBox();
+		vbox1.setSpacing(10);
+		vbox1.setAlignment(Pos.CENTER);
 		
-		setCenter(vbox);
-		
+		ImageView imageRock = new ImageView(new Image(image_path+"rock.png"));
+		imageRock.setFitHeight(100);
+		imageRock.setFitWidth(100);
+		vbox1.getChildren().addAll(imageRock,hit,test);
+		setCenter(vbox1);
 		////////////////// About animation ////////////////////////////
-		
-		String image_path = ClassLoader.getSystemResource("image/").toString();
 		imageWorm = new ImageView(new Image(image_path+"worm.png"));
 		imageWorm.setFitHeight(100);
 		imageWorm.setFitWidth(100);
 		
-		setBottom(imageWorm);
+		VBox vbox2  = new VBox();
+		vbox2.getChildren().addAll(imageWorm,healthRockBar);
 		
+		setBottom(vbox2);
 		path = new Path();
 		path.getElements().addAll(new MoveTo(150,50),new HLineTo(550));
 		path.setFill(null);
 		path.setVisible(false);
 		getChildren().add(path);
 		
-		pt = new PathTransition(Duration.millis(2000),path,imageWorm);
+		pt = new PathTransition(Duration.millis(6000),path,imageWorm);
 		pt.setCycleCount(Animation.INDEFINITE);
 		pt.setAutoReverse(true);
-		pt.play();
+		
 		
 		
 		///////////////////////////////////////////////////////
@@ -149,16 +155,5 @@ public class GamePane extends BorderPane implements Initializable{
 
 	public void setHealthRockBar(HealthRock healthRockBar) {
 		this.healthRockBar = healthRockBar;
-	}
-
-	@Override
-	public void initialize(URL url, ResourceBundle bundle) {
-		// TODO Auto-generated method stub
-		TranslateTransition translate = new TranslateTransition();
-		translate.setDuration(Duration.seconds(4));
-		translate.setNode(hit);
-		translate.setToX(-200);
-		translate.play();
-	}
-	
+	}	
 }

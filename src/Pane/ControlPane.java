@@ -32,8 +32,10 @@ public class ControlPane extends StackPane {
 				// TODO Auto-generated method stub
 				hammer.setHealth(hammer.getHealth() - 1);
 				gamepane.getHealthRockBar().setHealth(hammer.getHealth()*0.1);
+				
 				update();
 				System.out.println(gamepane.getImageWorm().getTranslateX());
+				
 			}
 		});
 
@@ -58,6 +60,7 @@ public class ControlPane extends StackPane {
 					alert.showAndWait();}
 					else {
 				gamepane.getTimer().getAnimationTimer().start();
+				gamepane.getPt().play();
 				changePane(1);}
 				
 			}
@@ -106,6 +109,9 @@ public class ControlPane extends StackPane {
 		}
 	}
 	public void update() {
+		if(gamepane.getHealthRockBar().getHealthBar().getProgress() < 0.6) {
+			gamepane.getHealthRockBar().getHealthBar().setStyle("-fx-accent: red");
+		}
 		if(gamepane.getHealthRockBar().getHealthBar().getProgress() == 0.0) {
 			Alert popUpGameOver =  new Alert(AlertType.INFORMATION);
 			popUpGameOver.setTitle("Game Over");
